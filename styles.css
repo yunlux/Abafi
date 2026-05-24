@@ -589,26 +589,44 @@ body.reader-toc-open {
     right: 18px;
     bottom: max(18px, env(safe-area-inset-bottom));
     z-index: 52;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 46px;
-    padding: 0 16px;
-    border: 1px solid var(--accent);
-    background: var(--accent);
-    color: #fffdf8;
-    box-shadow: var(--shadow);
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--accent-strong);
+    box-shadow: none;
+    backdrop-filter: blur(8px);
     cursor: pointer;
-    font-family:
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-    font-size: 14px;
-    font-weight: 650;
+  }
+
+  .chapter-fab span,
+  .chapter-fab::before,
+  .chapter-fab::after {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: currentColor;
+    content: "";
+  }
+
+  .chapter-fab span {
+    position: relative;
+  }
+
+  .chapter-fab::before {
+    transform: translateY(-5px);
+  }
+
+  .chapter-fab::after {
+    transform: translateY(5px);
+  }
+
+  .chapter-fab:hover {
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   .toc-backdrop {
