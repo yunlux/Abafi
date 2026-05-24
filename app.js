@@ -211,25 +211,16 @@ function setupActiveToc() {
 }
 
 async function loadBook() {
-  const [metaResponse, bookResponse] = await Promise.all([
-    fetch("content/meta.json"),
-    fetch("content/book.md"),
-  ]);
+  const bookResponse = await fetch("content/book.md");
 
-  if (!metaResponse.ok || !bookResponse.ok) {
-    throw new Error("无法读取 content 目录中的书籍文件。");
+  if (!bookResponse.ok) {
+    throw new Error("无法读取 content/book.md。");
   }
 
-  const meta = await metaResponse.json();
   const markdown = await bookResponse.text();
   const rendered = renderMarkdown(markdown);
   state.headings = rendered.headings;
 
-  $("#bookTitle").textContent = meta.title || "Abafi";
-  $("#bookAuthor").textContent = meta.author || "Miklós Jósika";
-  $("#bookDescription").textContent = meta.description || "";
-  $("#aboutText").textContent = meta.description || meta.notes || "";
-  $("#heroMeta").textContent = (meta.genres || []).join(" / ");
   $("#bookContent").innerHTML = rendered.html;
 
   renderToc($("#homeToc"), rendered.headings);
