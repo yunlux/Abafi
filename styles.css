@@ -92,6 +92,10 @@ button {
   font: inherit;
 }
 
+body.reader-toc-open {
+  overflow: hidden;
+}
+
 .progress {
   position: fixed;
   inset: 0 0 auto;
@@ -141,6 +145,15 @@ button {
 
 .site-header:focus-within {
   transform: translateY(0);
+}
+
+.chapter-fab,
+.sidebar-close {
+  display: none;
+}
+
+.toc-backdrop {
+  display: none;
 }
 
 .brand {
@@ -415,7 +428,13 @@ button {
   scrollbar-width: thin;
 }
 
-.sidebar-title span:last-child {
+.sidebar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chapter-count {
   min-width: 34px;
   padding: 2px 8px;
   text-align: center;
@@ -565,9 +584,85 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .chapter-fab {
+    position: fixed;
+    right: 18px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 52;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 16px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fffdf8;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-size: 14px;
+    font-weight: 650;
+  }
+
+  .toc-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    display: block;
+    background: rgba(18, 17, 15, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease;
+  }
+
+  .toc-backdrop.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .reader-sidebar {
-    position: static;
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 60;
+    width: min(86vw, 350px);
     max-height: none;
+    padding: 24px 18px 34px;
+    border-top: 0;
+    border-right: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transform: translateX(-100%);
+    transition: transform 180ms ease;
+  }
+
+  .reader-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-size: 13px;
   }
 
   .toc-list.home-toc {

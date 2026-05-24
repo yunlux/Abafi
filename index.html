@@ -15,6 +15,18 @@
       <span id="progressBar"></span>
     </div>
 
+    <button
+      class="chapter-fab"
+      type="button"
+      id="chapterDrawerToggle"
+      aria-controls="readerSidebar"
+      aria-expanded="false"
+    >
+      <span aria-hidden="true">☰</span>
+      <span>章节</span>
+    </button>
+    <div class="toc-backdrop" id="tocBackdrop" hidden></div>
+
     <header class="site-header">
       <a class="brand" href="#home" aria-label="回到首页">
         <span class="brand-mark">A</span>
@@ -46,9 +58,7 @@
           <h1 id="bookTitle">Abafi</h1>
           <p class="author" id="bookAuthor">Miklós Jósika</p>
           <p class="intro" id="bookDescription">
-            《Abafi》是匈牙利作家 Miklós Jósika（匈牙利姓名序：Jósika Miklós）的历史小说。
-            本静态站依据匈牙利电子图书馆（MEK）的公开文本整理为简体中文阅读版，
-            以长篇阅读体验为优先，并为后续译者注释、人物表、历史背景与版本说明保留扩展区域。
+            正在载入书籍简介。
           </p>
           <div class="hero-actions">
             <a class="primary-link" href="#reader">开始阅读</a>
@@ -74,8 +84,7 @@
           <section class="overview-block" id="about">
             <h2>关于本书</h2>
             <p id="aboutText">
-              《Abafi》是 Miklós Jósika 的代表性历史小说之一。本网站目前收录这一本书，
-              并预留译者注释、人物表、历史背景和版本说明区域，方便后续继续扩展为更完整的阅读资料库。
+              这是一个为《Abafi》准备的简体中文静态阅读网站，适合后续继续增加译注、章节说明、人物表与历史背景。
             </p>
           </section>
 
@@ -92,10 +101,13 @@
       </section>
 
       <section class="reader-shell" id="reader">
-        <aside class="reader-sidebar" aria-label="阅读目录">
+        <aside class="reader-sidebar" id="readerSidebar" aria-label="阅读目录">
           <div class="sidebar-title">
             <span>章节目录</span>
-            <span id="chapterCount">0</span>
+            <div class="sidebar-actions">
+              <span class="chapter-count" id="chapterCount">0</span>
+              <button class="sidebar-close" type="button" id="chapterDrawerClose">关闭</button>
+            </div>
           </div>
           <nav class="toc-list" id="readerToc" aria-label="阅读目录">
             <p class="muted">正在载入目录。</p>

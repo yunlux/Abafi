@@ -210,17 +210,44 @@ function setupActiveToc() {
     .forEach((heading) => observer.observe(heading));
 }
 
-async function loadBook() {
-  const bookResponse = await fetch("content/book.md");
+function setReaderTocOpen(isOpen) {
+  const sidebar = $("#readerSidebar");
+  const backdrop = $("#tocBackdrop");
+  const toggle = $("#chapterDrawerToggle");
+  if (!sidebar || !backdrop || !toggle) return;
 
-  if (!bookResponse.ok) {
-    throw new Error("无法读取 content/book.md。");
+  sidebar.classList.toggle("is-open", isOpen);
+  backdrop.classList.toggle("is-visible", isOpen);
+  backdrop.hidden = !isOpen;
+  document.body.classList.toggle("reader-toc-open", isOpen);
+  toggle.setAttribute("aria-expanded", String(isOpen));
+
+  if (isOpen) {
+    const firstLink = sidebar.querySelector("a");
+    if (firstLink) firstLink.focus({ preventScroll: true });
+  }
+}
+
+async function loadBook() {
+  const [metaResponse, bookResponse] = await Promise.all([
+    fetch("content/meta.json"),
+    fetch("content/book.md"),
+  ]);
+
+  if (!metaResponse.ok || !bookResponse.ok) {
+    throw new Error("无法读取 content 目录中的书籍文件。");
   }
 
+  const meta = await metaResponse.json();
   const markdown = await bookResponse.text();
   const rendered = renderMarkdown(markdown);
   state.headings = rendered.headings;
 
+  $("#bookTitle").textContent = meta.title || "Abafi";
+  $("#bookAuthor").textContent = meta.author || "Miklós Jósika";
+  $("#bookDescription").textContent = meta.description || "";
+  $("#aboutText").textContent = meta.description || meta.notes || "";
+  $("#heroMeta").textContent = (meta.genres || []).join(" / ");
   $("#bookContent").innerHTML = rendered.html;
 
   renderToc($("#homeToc"), rendered.headings);
@@ -257,6 +284,21 @@ function bindControls() {
     const isOpen = toc.classList.toggle("is-open");
     $("#tocToggle").textContent = isOpen ? "收起" : "展开";
     $("#tocToggle").setAttribute("aria-expanded", String(isOpen));
+  });
+
+  $("#chapterDrawerToggle").addEventListener("click", () => setReaderTocOpen(true));
+  $("#chapterDrawerClose").addEventListener("click", () => setReaderTocOpen(false));
+  $("#tocBackdrop").addEventListener("click", () => setReaderTocOpen(false));
+  $("#readerToc").addEventListener("click", (event) => {
+    if (event.target.closest("a")) setReaderTocOpen(false);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setReaderTocOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) setReaderTocOpen(false);
   });
 
   window.addEventListener("scroll", () => {
