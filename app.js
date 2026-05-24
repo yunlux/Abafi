@@ -7,6 +7,8 @@ const STORAGE = {
 const state = {
   headings: [],
   saveTimer: 0,
+  lastScrollY: 0,
+  headerHidden: false,
 };
 
 const root = document.documentElement;
@@ -154,6 +156,26 @@ function updateProgress() {
   $("#progressBar").style.width = `${percent}%`;
 }
 
+function updateHeaderVisibility() {
+  const header = $(".site-header");
+  if (!header) return;
+
+  const currentY = Math.max(0, window.scrollY);
+  const delta = currentY - state.lastScrollY;
+  const shouldAlwaysShow = currentY < 120 || header.matches(":focus-within");
+
+  if (shouldAlwaysShow) {
+    state.headerHidden = false;
+  } else if (delta > 8) {
+    state.headerHidden = true;
+  } else if (delta < -8) {
+    state.headerHidden = false;
+  }
+
+  header.classList.toggle("is-hidden", state.headerHidden);
+  state.lastScrollY = currentY;
+}
+
 function saveScrollPosition() {
   clearTimeout(state.saveTimer);
   state.saveTimer = window.setTimeout(() => {
@@ -248,8 +270,9 @@ function bindControls() {
 
   window.addEventListener("scroll", () => {
     updateProgress();
+    updateHeaderVisibility();
     saveScrollPosition();
-  });
+  }, { passive: true });
 }
 
 bindControls();

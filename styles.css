@@ -105,6 +105,11 @@ button {
   border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(16px);
+  transform: translateY(0);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
   font-family:
     ui-sans-serif,
     system-ui,
@@ -112,6 +117,14 @@ button {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+.site-header.is-hidden {
+  transform: translateY(calc(-100% - 4px));
+}
+
+.site-header:focus-within {
+  transform: translateY(0);
 }
 
 .brand {
