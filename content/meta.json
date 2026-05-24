@@ -1,0 +1,212 @@
+{
+  "title": "Abafi",
+  "author": "Miklós Jósika",
+  "authorOriginal": "Jósika Miklós",
+  "language": "zh-Hans",
+  "sourceLanguage": "hu",
+  "genres": [
+    "历史小说",
+    "匈牙利文学",
+    "长篇阅读"
+  ],
+  "description": "《Abafi》是匈牙利作家 Miklós Jósika（匈牙利姓名序：Jósika Miklós）的历史小说。本静态站依据匈牙利电子图书馆（MEK）的公开文本整理为简体中文阅读版，以长篇阅读体验为优先，并为后续译者注释、人物表、历史背景与版本说明保留扩展区域。",
+  "source": {
+    "name": "Magyar Elektronikus Könyvtár (MEK)",
+    "url": "https://mek.oszk.hu/03800/03850/03850.htm",
+    "accessed": "2026-05-24"
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "序言",
+      "sourceTitle": "ELŐSZÓ"
+    },
+    {
+      "number": 2,
+      "title": "乡居",
+      "sourceTitle": "FALUSI LAK"
+    },
+    {
+      "number": 3,
+      "title": "女战士",
+      "sourceTitle": "AMAZON"
+    },
+    {
+      "number": 4,
+      "title": "无用之徒",
+      "sourceTitle": "SEMMIREKELLŐ"
+    },
+    {
+      "number": 5,
+      "title": "喜悦",
+      "sourceTitle": "ÖRÖM"
+    },
+    {
+      "number": 6,
+      "title": "阿巴菲",
+      "sourceTitle": "ABAFI"
+    },
+    {
+      "number": 7,
+      "title": "1594年的科洛兹堡",
+      "sourceTitle": "KOLOSVÁR 1594-BEN"
+    },
+    {
+      "number": 8,
+      "title": "木构建筑",
+      "sourceTitle": "FAALKOTMÁNY"
+    },
+    {
+      "number": 9,
+      "title": "三位女士",
+      "sourceTitle": "HÁROM HÖLGY"
+    },
+    {
+      "number": 10,
+      "title": "拉萨家",
+      "sourceTitle": "RÁSA-HÁZ"
+    },
+    {
+      "number": 11,
+      "title": "红衣人",
+      "sourceTitle": "A VERES EMBER"
+    },
+    {
+      "number": 12,
+      "title": "赌约的后果",
+      "sourceTitle": "FOGADÁS KÖVETKEZMÉNYEI"
+    },
+    {
+      "number": 13,
+      "title": "一位演说者",
+      "sourceTitle": "EGY SZÓNOK"
+    },
+    {
+      "number": 14,
+      "title": "客店",
+      "sourceTitle": "VENDÉGLŐ"
+    },
+    {
+      "number": 15,
+      "title": "小托比亚什",
+      "sourceTitle": "A KIS TÓBIÁS"
+    },
+    {
+      "number": 16,
+      "title": "尖叫",
+      "sourceTitle": "SIKOLTÁS"
+    },
+    {
+      "number": 17,
+      "title": "米科拉家",
+      "sourceTitle": "A MIKOLA HÁZ"
+    },
+    {
+      "number": 18,
+      "title": "活雕像",
+      "sourceTitle": "ELEVEN SZOBOR"
+    },
+    {
+      "number": 19,
+      "title": "任性",
+      "sourceTitle": "SZESZÉLY"
+    },
+    {
+      "number": 20,
+      "title": "切塔捷博利",
+      "sourceTitle": "CSETÁTYE BOLI"
+    },
+    {
+      "number": 21,
+      "title": "闪电",
+      "sourceTitle": "VILLÁM"
+    },
+    {
+      "number": 22,
+      "title": "午夜黑骑士",
+      "sourceTitle": "FEKETE LOVAG ÉJFÉLKOR"
+    },
+    {
+      "number": 23,
+      "title": "舞厅",
+      "sourceTitle": "TÁNCTEREM"
+    },
+    {
+      "number": 24,
+      "title": "特伦奇堡",
+      "sourceTitle": "TRENCSI-VÁR"
+    },
+    {
+      "number": 25,
+      "title": "托尔尼亚·马泰",
+      "sourceTitle": "TORNYA MÁTÉ"
+    },
+    {
+      "number": 26,
+      "title": "天鹅骑士",
+      "sourceTitle": "HATTYÚ-LOVAG"
+    },
+    {
+      "number": 27,
+      "title": "珐琅勇士",
+      "sourceTitle": "ZOMÁNCOS VITÉZ"
+    },
+    {
+      "number": 28,
+      "title": "佳偶",
+      "sourceTitle": "SZÉP PÁR"
+    },
+    {
+      "number": 29,
+      "title": "战备",
+      "sourceTitle": "HADI KÉSZÜLETEK"
+    },
+    {
+      "number": 30,
+      "title": "浴场",
+      "sourceTitle": "A FÜRDŐ"
+    },
+    {
+      "number": 31,
+      "title": "作为统帅的巴托里",
+      "sourceTitle": "BÁTHORI MINT VEZÉR"
+    },
+    {
+      "number": 32,
+      "title": "战斗及其后果",
+      "sourceTitle": "A CSATA S KÖVETKEZÉSEI"
+    },
+    {
+      "number": 33,
+      "title": "感恩与死亡",
+      "sourceTitle": "HÁLA S HALÁL"
+    },
+    {
+      "number": 34,
+      "title": "小日加",
+      "sourceTitle": "A KIS ZSIGA"
+    },
+    {
+      "number": 35,
+      "title": "无望的愿望",
+      "sourceTitle": "REMÉNYTELEN KÍVÁNAT"
+    },
+    {
+      "number": 36,
+      "title": "吉泽拉",
+      "sourceTitle": "GIZELLA"
+    },
+    {
+      "number": 37,
+      "title": "关于道德影响与诗的正义的几句话（附录）",
+      "sourceTitle": "EGY-KÉT SZÓ AZ ERKÖLCSI HATÁSRÓL S KÖLTŐI IGAZSÁGTÉTELRŐL MINT TOLDALÉK"
+    }
+  ],
+  "reservedSections": [
+    "译者注释",
+    "人物表",
+    "历史背景",
+    "版本说明"
+  ],
+  "notes": "正文为机器辅助初译，建议发布正式版本前进行人工校订。"
+}

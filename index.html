@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hans" data-theme="light" data-font-size="medium">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Abafi - Miklós Jósika 历史小说简体中文静态阅读网站"
+    />
+    <title>Abafi | Miklós Jósika</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true">
+      <span id="progressBar"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="回到首页">
+        <span class="brand-mark">A</span>
+        <span>Abafi</span>
+      </a>
+
+      <nav class="top-nav" aria-label="主导航">
+        <a href="#reader">阅读</a>
+        <a href="#toc">目录</a>
+        <a href="#about">关于</a>
+      </nav>
+
+      <div class="reader-controls" aria-label="阅读设置">
+        <div class="segmented" aria-label="字号">
+          <button type="button" data-font="small">小</button>
+          <button type="button" data-font="medium">中</button>
+          <button type="button" data-font="large">大</button>
+        </div>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="切换主题">
+          深色
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-inner">
+          <p class="meta-line" id="heroMeta">历史小说 / 匈牙利文学 / 长篇阅读</p>
+          <h1 id="bookTitle">Abafi</h1>
+          <p class="author" id="bookAuthor">Miklós Jósika</p>
+          <p class="intro" id="bookDescription">
+            正在载入书籍简介。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#reader">开始阅读</a>
+            <a class="secondary-link" href="#toc">查看目录</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview" aria-label="书籍概览">
+        <div class="overview-inner">
+          <section class="overview-block" id="toc">
+            <div class="section-heading">
+              <span>目录</span>
+              <button class="toc-toggle" type="button" id="tocToggle" aria-expanded="false">
+                展开
+              </button>
+            </div>
+            <nav class="toc-list home-toc" id="homeToc" aria-label="首页目录">
+              <p class="muted">正在生成目录。</p>
+            </nav>
+          </section>
+
+          <section class="overview-block" id="about">
+            <h2>关于本书</h2>
+            <p id="aboutText">
+              这是一个为《Abafi》准备的简体中文静态阅读网站，适合后续继续增加译注、章节说明、人物表与历史背景。
+            </p>
+          </section>
+
+          <section class="overview-block reserve-grid" aria-label="预留资料区域">
+            <h2>资料区域</h2>
+            <div class="reserve-items">
+              <a href="#译者注释">译者注释</a>
+              <a href="#人物表">人物表</a>
+              <a href="#历史背景">历史背景</a>
+              <a href="#版本说明">版本说明</a>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="reader-shell" id="reader">
+        <aside class="reader-sidebar" aria-label="阅读目录">
+          <div class="sidebar-title">
+            <span>章节目录</span>
+            <span id="chapterCount">0</span>
+          </div>
+          <nav class="toc-list" id="readerToc" aria-label="阅读目录">
+            <p class="muted">正在载入目录。</p>
+          </nav>
+        </aside>
+
+        <article class="book-content" id="bookContent" aria-live="polite">
+          <p class="loading">正在载入《Abafi》正文。</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        文本来源：
+        <a href="https://mek.oszk.hu/03800/03850/03850.htm" rel="noopener" target="_blank">
+          Magyar Elektronikus Könyvtár
+        </a>
+        。本站为纯静态阅读页面。
+      </p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
