@@ -1,5 +1,20 @@
 :root {
   color-scheme: light;
+}
+
+@font-face {
+  font-family: "Source Han Serif SC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Source Han Serif SC"),
+    local("Source Han Serif CN"),
+    url("https://raw.githubusercontent.com/adobe-fonts/source-han-serif/release/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf")
+      format("opentype");
+}
+
+:root {
   --bg: #f7f5ef;
   --bg-soft: #efeee7;
   --surface: #fffdf8;
@@ -58,6 +73,7 @@ body {
     var(--bg);
   color: var(--text);
   font-family:
+    "Source Han Serif SC",
     ui-serif,
     "Noto Serif SC",
     "Songti SC",
