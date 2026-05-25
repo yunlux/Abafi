@@ -243,7 +243,7 @@ async function loadBook() {
   const rendered = renderMarkdown(markdown);
   state.headings = rendered.headings;
 
-  $("#bookTitle").textContent = meta.title || "Abafi";
+  $("#bookTitle").textContent = meta.title || "Abafi（阿巴菲）";
   $("#bookAuthor").textContent = meta.author || "Miklós Jósika";
   $("#bookDescription").textContent = meta.description || "";
   $("#aboutText").textContent = meta.description || meta.notes || "";
