@@ -284,6 +284,17 @@ body.reader-toc-open {
   letter-spacing: 0;
 }
 
+.title-original,
+.title-translation {
+  display: inline-block;
+}
+
+.title-translation {
+  margin-left: 0.08em;
+  font-size: 0.42em;
+  vertical-align: 0.16em;
+}
+
 .author {
   margin: 22px 0 0;
   color: var(--muted);

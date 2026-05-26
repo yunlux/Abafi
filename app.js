@@ -228,6 +228,25 @@ function setReaderTocOpen(isOpen) {
   }
 }
 
+function renderBookTitle(meta) {
+  const title = meta.title || "Abafi";
+  const translation = meta.titleTranslation || "阿巴菲";
+  const titleElement = $("#bookTitle");
+  titleElement.textContent = "";
+
+  const originalTitle = document.createElement("span");
+  originalTitle.className = "title-original";
+  originalTitle.textContent = title;
+  titleElement.append(originalTitle);
+
+  if (translation) {
+    const translatedTitle = document.createElement("span");
+    translatedTitle.className = "title-translation";
+    translatedTitle.textContent = `（${translation}）`;
+    titleElement.append(translatedTitle);
+  }
+}
+
 async function loadBook() {
   const [metaResponse, bookResponse] = await Promise.all([
     fetch("content/meta.json"),
@@ -243,7 +262,7 @@ async function loadBook() {
   const rendered = renderMarkdown(markdown);
   state.headings = rendered.headings;
 
-  $("#bookTitle").textContent = meta.title || "Abafi（阿巴菲）";
+  renderBookTitle(meta);
   $("#bookAuthor").textContent = meta.author || "Miklós Jósika";
   $("#bookDescription").textContent = meta.description || "";
   $("#aboutText").textContent = meta.description || meta.notes || "";
