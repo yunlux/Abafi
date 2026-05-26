@@ -1,8 +1,6 @@
 {
-  "title": "Abafi",
-  "titleTranslation": "阿巴菲",
-  "author": "Miklós Jósika",
-  "authorOriginal": "Jósika Miklós",
+  "title": "阿巴菲",
+  "author": "米克洛什·约希卡",
   "language": "zh-Hans",
   "sourceLanguage": "hu",
   "genres": [
@@ -10,9 +8,9 @@
     "匈牙利文学",
     "长篇阅读"
   ],
-  "description": "《阿巴菲》（Abafi）是匈牙利作家 Miklós Jósika（匈牙利姓名序：Jósika Miklós）的历史小说。本静态站依据匈牙利电子图书馆（MEK）的公开文本整理为简体中文阅读版，以长篇阅读体验为优先，并为后续译者注释、人物表、历史背景与版本说明保留扩展区域。",
+  "description": "《阿巴菲》是匈牙利作家米克洛什·约希卡的历史小说。本静态站依据匈牙利电子图书馆的公开文本整理为简体中文阅读版，以长篇阅读体验为优先，并为后续译者注释、人物表、历史背景与版本说明保留扩展区域。",
   "source": {
-    "name": "Magyar Elektronikus Könyvtár (MEK)",
+    "name": "匈牙利电子图书馆",
     "url": "https://mek.oszk.hu/03800/03850/03850.htm",
     "accessed": "2026-05-24"
   },

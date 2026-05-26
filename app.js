@@ -229,8 +229,8 @@ function setReaderTocOpen(isOpen) {
 }
 
 function renderBookTitle(meta) {
-  const title = meta.title || "Abafi";
-  const translation = meta.titleTranslation || "阿巴菲";
+  const title = meta.title || "阿巴菲";
+  const translation = meta.titleTranslation || "";
   const titleElement = $("#bookTitle");
   titleElement.textContent = "";
 
@@ -239,7 +239,7 @@ function renderBookTitle(meta) {
   originalTitle.textContent = title;
   titleElement.append(originalTitle);
 
-  if (translation) {
+  if (translation && translation !== title) {
     const translatedTitle = document.createElement("span");
     translatedTitle.className = "title-translation";
     translatedTitle.textContent = `（${translation}）`;
@@ -263,7 +263,7 @@ async function loadBook() {
   state.headings = rendered.headings;
 
   renderBookTitle(meta);
-  $("#bookAuthor").textContent = meta.author || "Miklós Jósika";
+  $("#bookAuthor").textContent = meta.author || "米克洛什·约希卡";
   $("#bookDescription").textContent = meta.description || "";
   $("#aboutText").textContent = meta.description || meta.notes || "";
   $("#heroMeta").textContent = (meta.genres || []).join(" / ");

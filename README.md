@@ -1,8 +1,8 @@
-# Abafi 静态阅读网站
+# 阿巴菲静态阅读网站
 
-这是 Miklós Jósika / Jósika Miklós 的历史小说《Abafi》简体中文静态阅读网站。项目只使用原生 HTML、CSS 和 JavaScript，不需要后端、数据库或构建步骤，可以直接部署到 Vercel。
+这是米克洛什·约希卡的历史小说《阿巴菲》简体中文静态阅读网站。项目只使用原生 HTML、CSS 和 JavaScript，不需要后端、数据库或构建步骤，可以直接部署到 Vercel。
 
-正文来源参考 Magyar Elektronikus Könyvtár (MEK)：https://mek.oszk.hu/03800/03850/03850.htm
+正文来源参考匈牙利电子图书馆：https://mek.oszk.hu/03800/03850/03850.htm
 
 ## 文件结构
 
@@ -68,7 +68,7 @@ Vercel 项目设置：
 ```bash
 git init
 git add .
-git commit -m "Initial Abafi static reading site"
+git commit -m "Initial Chinese reading site"
 ```
 
 2. 在 GitHub 创建一个新仓库。
